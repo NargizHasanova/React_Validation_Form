@@ -1,13 +1,169 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  background: -webkit-linear-gradient(bottom left, #08aeea 0%, #b721ff 100%);
+}
+
+.registr-form {
+  width: 790px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.registr-form h1 {
+  font-size: 24px;
+  color: #fff;
+  background-color: #1a1a1a;
+  text-align: center;
+  padding: 24px;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+label {
+  color: #555;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+.registr-form input {
+  background-color: #e5e5e5;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 50px;
+  width: 100%;
+}
+
+select {
+  background-color: #e5e5e5;
+  border: none;
+  outline: none;
+  height: 50px;
+  border-radius: 5px;
+  color: #555;
+  font-size: 15px;
+  padding-left: 20px;
+}
+
+.form-container {
+  margin: 50px 82px;
+  display: grid;
+  gap: 38px;
+}
+
+.name {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  position: relative;
+}
+
+.firstName,
+.area-code {
+  margin-right: 20px;
+}
+
+.name span,
+.phone span {
+  display: block;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: red;
+  position: absolute;
+}
+
+.company,
+.email {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  position: relative;
+}
+
+
+.phone {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr;
+
+}
+
+.subject {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+
+}
+
+select option {
+  color: black;
+}
+
+.radio label {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.radio-btns {
+  display: flex;
+  margin-top: 20px;
+}
+
+.radio-btns input {
+  width: 25px;
+  cursor: pointer;
+}
+
+button {
+  border-radius: 5px;
+  background-color: #ff4b5a;
+  color: #fff;
+  padding: 16px;
+  border: none;
+  outline: none;
+  width: 170px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+button:hover {
+  background-color: #eb3746;
+}
+
+
+form {
+  padding: 20px;
+}
+
+.emailError {
+  color: red;
+  position: absolute;
+  bottom: -9px;
+  left: 148px;
+}
+
+form>div {
+  margin-bottom: 30px;
+}
+
+.company {
+  position: relative;
+}
+
+.company span {
+  position: absolute;
+  color: red;
+  bottom: -17px;
+  left: 149px;
+}
+
+.acceptTerms {
+  color: red;
 }
