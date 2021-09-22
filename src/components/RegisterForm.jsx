@@ -2,6 +2,7 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import axios from 'axios';
 
 
 
@@ -30,8 +31,23 @@ const schema = yup.object().shape({
 });
 
 export default function RegisterForm() {
+
     const { register, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(schema) });
-    const onSubmit = data => console.log(data);
+
+    // const onSubmit = (data) => {
+    //     console.log(data)
+    //     axios.post('http://localhost:8000/registeredUsers', data)
+    // }
+
+    const onSubmit = (data) => {
+        console.log(data)
+        fetch('http://localhost:8000/registeredUsers', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: data
+        })
+    }
+
     return (
         <div className="registr-form">
             <h1>EVENT REGISTRATION FORM</h1>
@@ -52,26 +68,34 @@ export default function RegisterForm() {
                 </div>
                 <div className="company">
                     <label htmlFor="age">Age</label>
-                    <input type="number" id="age"
+                    <input
+                        type="number"
+                        id="age"
                         {...register("age", { required: "This is required", minLength: { value: 6, message: "last name is not valid" }, maxLength: { value: 99 } })} />
                     {errors.age && <span>{errors.age.message}</span>}
                 </div>
                 <div className="company">
                     <label htmlFor="password">Password</label>
-                    <input type="password" id="password"
+                    <input
+                        type="password"
+                        id="password"
                         {...register('password')} />
                     <span className="emailError">{errors.password?.message}</span>
                 </div>
                 <div className="company">
-                    <label htmlFor="password">Confirm Password</label>
-                    <input type="password" id="password"
+                    <label htmlFor="password2">Confirm Password</label>
+                    <input
+                        type="password"
+                        id="password2"
                         {...register('confirmPassword')} />
                     <span className="emailError">{errors.confirmPassword?.message}</span>
                 </div>
 
                 <div className="email">
                     <label htmlFor="email">Email</label>
-                    <input type="text" id="email"
+                    <input
+                        type="text"
+                        id="email"
                         {...register('email')} />
                     <span className="emailError">{errors.email?.message}</span>
                 </div>
@@ -79,13 +103,13 @@ export default function RegisterForm() {
                 <div className="phone">
                     <label htmlFor="phone">Phone</label>
                     <div className="area-code">
-                        <input type="text" id="phone"
+                        <input
+                            type="text"
+                            id="phone"
                             {...register("phone")} />
                         <span>{errors.phone?.message}</span>
                     </div>
-                    <div className="phone-number">
-                        <input type="text" />
-                    </div>
+
                 </div>
 
                 <div className="subject">
@@ -100,7 +124,9 @@ export default function RegisterForm() {
                 <div className="radio">
                     <label htmlFor="accept">I accept all terms</label>
                     <div className="radio-btns">
-                        <input id="accept" className="radio-btn"
+                        <input
+                            id="accept"
+                            className="radio-btn"
                             {...register('acceptTerms')} type="checkbox" />
                         <span>Yes</span>
                     </div>

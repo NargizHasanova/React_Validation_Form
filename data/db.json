@@ -1,0 +1,32 @@
+{
+
+    "registeredUsers":[
+        {
+            "firstName": "Qulu",
+            "lastName":"Najafov",
+            "age":29,
+            "password":"qulu333",
+            "email":"qulu@n.com",
+            "phone":"050-350-33-33",
+            "gender":"male"       
+        },
+        {
+            "firstName": "Nargiz",
+            "lastName":"Hasanova",
+            "age":25,
+            "password":"nara333",
+            "email":"nara@g.com",
+            "phone":"050-450-33-33",
+            "gender":"female"       
+        },
+        {
+            "firstName": "Aqil",
+            "lastName":"Orujov",
+            "age":20,
+            "password":"aqil333",
+            "email":"mentor@q.com",
+            "phone":"050-250-33-33",
+            "gender":"male"       
+        }
+    ]
+}
