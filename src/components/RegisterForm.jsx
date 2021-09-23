@@ -34,19 +34,19 @@ export default function RegisterForm() {
 
     const { register, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(schema) });
 
-    // const onSubmit = (data) => {
-    //     console.log(data)
-    //     axios.post('http://localhost:8000/registeredUsers', data)
-    // }
-
     const onSubmit = (data) => {
         console.log(data)
-        fetch('http://localhost:8000/registeredUsers', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: data
-        })
+        axios.post('https://test-001-1f274-default-rtdb.firebaseio.com/registerForm.json', data)
     }
+
+    // const onSubmit = (data) => {
+    //     console.log(data)
+    //     fetch('http://localhost:8000/registeredUsers', {
+    //         method: 'POST',
+    //         headers: { "Content-Type": "application/json" },
+    //         body: data
+    //     })
+    // }
 
     return (
         <div className="registr-form">
